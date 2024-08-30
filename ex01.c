@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define TAMANHO_BUFFER 1024
+#define TAMANHO_BUFFER 128
 
 int main() {
     const char *nome_arq = "aula02.txt";
