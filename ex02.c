@@ -20,11 +20,18 @@ int main() {
 
     int count = 0;
 
-    while(!feof(arq)) {
-        fgets(buffer, sizeof(buffer), arq);
+    while (fgets(buffer, sizeof(buffer), arq) != NULL) {
+        for (int i = 0; i < strlen(buffer); i++) {
+            if (buffer[i] == '\n') {
+                count++;
+            }
+        }
+    }
+    
+    if (strlen(buffer) > 0 && buffer[strlen(buffer) - 1] != '\n') {
         count++;
     }
 
-    printf("\nNúmero de linhas do arquivo: %d\n\n", count);
+    printf("\nNÃºmero de linhas do arquivo: %d\n\n", count);
     return 0;
 }
